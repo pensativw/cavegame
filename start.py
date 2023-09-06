@@ -1,7 +1,6 @@
 ##  Estou aprendendo a usar o Python criando esse jogo em linha de comando.
 ##  Críticas construtivas são aceitas.
 
-import time
 input('\nPressione Enter para jogar Cave Game.')
 
 
@@ -41,7 +40,7 @@ while True:
     input(f'\nO {f00} está desacordado. Você tem 3 opções...')
     
     while True:
-        AB01=False #    Canibalismo
+        AB01=False #    Decepção
         AB02=False #    Acordar
         AB03=False #    Deixá-lo
         try:
@@ -64,10 +63,23 @@ while True:
         if AB01==True and AB02==True:
             input(f'\nAo tentar se aproximar e colocar a sua boca na sua perna, {f00} acorda e pergunta o que você está fazendo.')
             input(f'\nVOCÊ ESTÁ TENTANDO ME COMER?! - {f00} grita desesperadamente')
-            try:
-                AC00=int(input('\n1. Me desculpe! Eu pensava que era uma coxinha de frango!\n2. CARALHO!?1 CÊ TÁ VIVO!?!\n3. Eu pensava que você está morto e para eu sobreviver eu precisava consumir você.\n-> '))
-            except ValueError:
-                input('\nEscreva algo.')
+            while True:
+                try:
+                    AC00=int(input('\n1. Me desculpe! Eu pensava que era uma coxinha de frango!\n2. CARALHO!?1 CÊ TÁ VIVO!?!\n3. Eu pensava que você está morto e para eu sobreviver eu precisava consumir você.\n-> '))
+                except ValueError:
+                    input('\nEscreva algo.')
+                if AC00==1:
+                    input('\nMANO!? É SÉRIO QUE TU TÁ DE BRINCADEIRINHA QUANDO A GENTE TÁ NUMA CAVERNA QUE A GENTE MAL SE LEMBRA COMO QUE A GENTE CHEGOU AQUI?')
+                    break
+                elif AC00==2:
+                    input('\nÉ CLARO QUE EU TÔ!!! EU SÓ TAVA DESMAIADO POR CONTA DE ONTEM! O QUE TU ACHOU?!')
+                    AC01=True
+                elif AC00==3:
+                    input('\nQuê? O que você tá falando? Só deve ter passado uns 2 dias... né?')
+                    AC02=True
+                    break
+            
+
     break
 input('Esse foi o Cave Game! Espero que tenha gostado!')
 input('Programador: pensa')
