@@ -38,4 +38,4 @@ while True:
 input('Esse foi o Cave Game! Espero que tenha gostado!')
 input('Programador: pensa')
 
-#eu sou gay
+#testr
