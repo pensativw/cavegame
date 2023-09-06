@@ -41,24 +41,33 @@ while True:
     input(f'\nO {f00} está desacordado. Você tem 3 opções...')
     
     while True:
-        AB01=False
-        AB02=False
-        AB03=False
-        AB04=False
+        AB01=False #    Canibalismo
+        AB02=False #    Acordar
+        AB03=False #    Deixá-lo
         try:
-            A00=int(input('\n1. Comer de sua carne\n2. O acordar\n3. Deixá-lo desacordado e seguir em frente'))
-            if A00==1:
+            AB00=int(input('\n1. Comer de sua carne, porque você está drogado\n2. O acordar\n3. Deixá-lo desacordado e seguir em frente'))
+            if AB00==1:
                 AB01=True
                 AB02=True
-            elif A00==2:
-                AB03==True
-            elif A00==3:
-                AB04==True
+                break
+            elif AB00==2:
+                AB02=True
+                break
+            elif AB00==3:
+                AB03=True
+                break
             else:input('Faça algo!')
         except ValueError:
             input('\nEscreva algum número!')
             continue
-                
+        
+        if AB01==True and AB02==True:
+            input(f'\nAo tentar se aproximar e colocar a sua boca na sua perna, {f00} acorda e pergunta o que você está fazendo.')
+            input(f'\nVOCÊ ESTÁ TENTANDO ME COMER?! - {f00} grita desesperadamente')
+            try:
+                AC00=int(input('\n1. Me desculpe! Eu pensava que era uma coxinha de frango!\n2. CARALHO!?1 CÊ TÁ VIVO!?!\n3. Eu pensava que você está morto e para eu sobreviver eu precisava consumir você.\n-> '))
+            except ValueError:
+                input('\nEscreva algo.')
     break
 input('Esse foi o Cave Game! Espero que tenha gostado!')
 input('Programador: pensa')
