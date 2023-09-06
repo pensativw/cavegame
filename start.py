@@ -5,11 +5,6 @@ import time
 input('\nPressione Enter para jogar Cave Game.\n')
 
 
-Tu00=input(f'deseja ver o tu')
-Tu01=time.sleep(5)
-if Tu00==():
-    input('é bem fácil')
-    
 input('\nVocê acordou numa caverna...\n')
 input('\nTu mal consegue enxergar...\n')
 input('\nO que você faz?\n')
