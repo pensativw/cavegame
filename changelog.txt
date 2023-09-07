@@ -1,0 +1,20 @@
+v0.0.2.6
+Adições:
+    Ao escrever 'ver' quando digitar no nome aparece a versão
+    Nome
+    Tutorial
+    Animações de texto (em alguns pontos)
+    Mais algumas linhas de diálogo
+
+Alterações:
+    Removido temporizador do início
+    def.py renomeado para fundef.py
+    Melhoria no timing
+
+Bugs:
+    Alguns. Mas detectei um ao selecionar algumas opções.
+
+Em porgresso:
+    História
+    Melhoria na estrutura
+    Automação

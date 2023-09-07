@@ -1,33 +1,30 @@
 ##  Estou aprendendo a usar o Python criando esse jogo em linha de comando.
 ##  Críticas construtivas são aceitas.
 
-
+ver='\n0.0.2.6'
 
 import time
-
-def Temp():
-    x='!','!','!'
-    for i in x:
-        print(i,end='')
-        time.sleep(1)
-
+from fundef import DJpt,TUTO
 
 input('\nPressione Enter para jogar Cave Game.')
 
-name = input('\nEscreva seu nome -> ') 
+TUTO()  
+
+while True:
+    name = input('\nEscreva seu nome -> ') 
+    if name=='ver':
+        print(ver)
+        continue
+    else:
+        break
+        
+    
 while name.strip() == '' :
-    print('\nEscreva algo.')
+    print('\nEscreva algo.',end=' ')
     time.sleep(1)
-    name = input('\nNome -> ')
+    name = input('Nome -> ')
 
-
-print('\nComeçando em',end=' ')
-x = range(3,0,-1)
-for i in x:
-    print(i,end='... ')
-    time.sleep(1)
-
-input('\n\nVocê acorda em um lugar desconhecido')
+input('\nVocê acorda em um lugar desconhecido')
 input('\nTu mal consegue enxergar...')
 input('\nO que você faz?')
 
@@ -37,12 +34,18 @@ while True:
         Det00=True
         try:
             UDec00=int(input('\n1. Gritar por ajuda\n2. Se levantar\n\n-> '))
+            Dec00=False
             if UDec00==1:
-                print('\nSOCORRO!!!')
-                time.sleep(3)
-                print('\nALGUÉM AÍ!!!!??')
-                time.sleep(3)
-                input('\nNada acontece.')
+                DJtempo=20
+                DJphrase='\nSOCORRO!!!!!!'
+                DJpt(DJphrase,DJtempo)
+                DJtempo=20
+                DJphrase='\n\nALGUÉM AÍ?!?!?!?!?!\n\n'
+                DJpt(DJphrase,DJtempo)
+                DJtempo=2
+                DJphrase='...'
+                DJpt(DJphrase,DJtempo)
+                input(' Nada acontece.')
                 Dec00=True
             elif UDec00==2:
                 input('\nAo se levantar, tu percebe que está num buraco.')
@@ -56,10 +59,10 @@ while True:
         except ValueError:
             input('\nEscreva um número.')
             continue
-    if Det00==False:input('\nAo caminhar um pouco, você vê um corpo em posição fetal.')
+    if Det00==False:input('\nAo caminhar um pouco, você vê um corpo estirado no chão.')
     else:break
     
-    input('\nEntão tu percebe que é seu amigo')
+    input('\nEntão tu percebe que é seu amigo.')
     
     while True:
         Fri00=input('\nEle é o... -> ')
@@ -76,7 +79,7 @@ while True:
             Sep01_Wakeup=False #    Acordar
             Sep02_LeftBehind=False #    Abandono
             try:
-                UDec01_Canibal=int(input('\n1. Comer de sua carne, por algum motivo\n2. O acordar\n3. Deixá-lo desacordado e seguir em frente\n\n-> '))
+                UDec01_Canibal=int(input('\n1. Comer de sua carne, por algum motivo\n2. Acordá-lo\n3. Deixá-lo desacordado e seguir em frente\n\n-> '))
                 if UDec01_Canibal==1:
                     Sep00_Decepcao=True
                     Sep01_Wakeup=True
@@ -143,12 +146,23 @@ while True:
                     input('\nEscreva um número')
                     
     elif Sep02_LeftBehind==True and Dec00==True:
-        input('EI!')
-        time.sleep(2)
-        input('Você ')
+        DJphrase=f'\nEEEIII!!!! {name}!!!!'
+        DJtempo=30
+        DJpt(DJphrase,DJtempo)
+        
+        DJphrase='\nEU PENSAVA QUE VOCÊ IA ME AJUDAR!'
+        DJtempo=30
+        DJpt(DJphrase,DJtempo)
         while True:
-            input('1. Não')
-    
+            UDec02_MORTO=int(input('\n1. Cara, eu pensava que tu já tava morto. Do que Adiantaria eu ver se tu tinha alguma coisa?\n2. Por que você tava no chão?'))
+            if UDec02_MORTO==1:
+                DJphrase='\nÉ QUE EU PENSAVA QUE TU IA ME AJUDAR, DO QUE MAIS SERIA?!?!'
+                DJtempo=30
+                DJpt(DJphrase,DJtempo)
+                
+    elif Sep02_LeftBehind==True and Dec00==False:
+        input('\nDepois de algum tempo você se depara com um pessoa, você não o conhece ele não parece ser agressivo.')
+        
     break
 input('\nEsse foi o Cave Game! Espero que tenha gostado!')
 input('\nProgramador: pensa')
