@@ -1,36 +1,54 @@
 ##  Estou aprendendo a usar o Python criando esse jogo em linha de comando.
 ##  Críticas construtivas são aceitas.
+
+
+
 import time
+
+def Temp():
+    x='!','!','!'
+    for i in x:
+        print(i,end='')
+        time.sleep(1)
+
 
 input('\nPressione Enter para jogar Cave Game.')
 
-input('\nAntes de tudo, qual é o seu nome?') #incompleto
+name = input('\nEscreva seu nome -> ') 
+while name.strip() == '' :
+    print('\nEscreva algo.')
+    time.sleep(1)
+    name = input('\nNome -> ')
 
-x = range(3, 6)
-for n in x:
-    print(n)
-    time.sleep(3)
-input('\nVocê acabou de acordar')
+
+print('\nComeçando em',end=' ')
+x = range(3,0,-1)
+for i in x:
+    print(i,end='... ')
+    time.sleep(1)
+
+input('\n\nVocê acorda em um lugar desconhecido')
 input('\nTu mal consegue enxergar...')
 input('\nO que você faz?')
 
 
 while True:
     while True:
-        A02=False
+        Det00=True
         try:
-            A01=int(input('\n1. Gritar por ajuda\n2. Se levantar\n\n-> '))
-            if A01==1:
+            UDec00=int(input('\n1. Gritar por ajuda\n2. Se levantar\n\n-> '))
+            if UDec00==1:
                 print('\nSOCORRO!!!')
                 time.sleep(3)
                 print('\nALGUÉM AÍ!!!!??')
                 time.sleep(3)
                 input('\nNada acontece.')
-                A00=True
-            elif A01==2:
-                input('\nTu percebe que está num buraco, e sai daquele buraco.')
-                input('\nE dá graças a Deus que ao sair você não foi esmagado por rochas que acabaram de ser empurradas por alguém...')
-                A02=True
+                Dec00=True
+            elif UDec00==2:
+                input('\nAo se levantar, tu percebe que está num buraco.')
+                input('\nCom certa dificuldade por causa do sedentarismo, você sai dele.')
+                input('\nE dá graças a Deus que ao sair você não foi esmagado por rochas que foram empurradas por alguém...')
+                Det00=False
                 break
             else:
                 input('\nVocê morreu por ter feito nada, por pedras que desabaram.')
@@ -38,45 +56,45 @@ while True:
         except ValueError:
             input('\nEscreva um número.')
             continue
-    if A02==True:input('\nE você vê, na total escuridão um corpo.')
+    if Det00==False:input('\nAo caminhar um pouco, você vê um corpo em posição fetal.')
     else:break
     
     input('\nEntão tu percebe que é seu amigo')
     
     while True:
-        f00=input('\nEle é o... -> ')
+        Fri00=input('\nEle é o... -> ')
         
-        if f00=='':
+        if Fri00=='':
             input('\nEscreva o nome do seu amigo.')
             continue
         else: break
-    input(f'\nO {f00} está desacordado. Você tem 3 opções...')
+    input(f'\nO {Fri00} está desacordado. Então você pensa que há somente 3 opções...')
     
     while True:
         while True:
-            AB01=False #    Decepção
-            AB02=False #    Acordar
-            AB03=False #    Abandono
+            Sep00_Decepcao=False #    Decepção
+            Sep01_Wakeup=False #    Acordar
+            Sep02_LeftBehind=False #    Abandono
             try:
-                AB00=int(input('\n1. Comer de sua carne, por algum motivo\n2. O acordar\n3. Deixá-lo desacordado e seguir em frente\n\n-> '))
-                if AB00==1:
-                    AB01=True
-                    AB02=True
+                UDec01_Canibal=int(input('\n1. Comer de sua carne, por algum motivo\n2. O acordar\n3. Deixá-lo desacordado e seguir em frente\n\n-> '))
+                if UDec01_Canibal==1:
+                    Sep00_Decepcao=True
+                    Sep01_Wakeup=True
                     break
-                elif AB00==2:
-                    AB02=True
+                elif UDec01_Canibal==2:
+                    Sep01_Wakeup=True
                     break
-                elif AB00==3:
-                    AB03=True
+                elif UDec01_Canibal==3:
+                    Sep02_LeftBehind=True
                     break
                 else:input('\nFaça algo!')
             except ValueError:
                 input('\nEscreva algum número!')
                 continue
         
-        if AB01==True and AB02==True:
-                    input(f'\nAo tentar se aproximar e colocar a sua boca na sua perna, {f00} acorda e pergunta o que você está fazendo.')
-                    input(f'\nVOCÊ ESTÁ TENTANDO ME COMER?! - {f00} grita desesperadamente')
+        if Sep00_Decepcao==True and Sep01_Wakeup==True:
+                    input(f'\nAo tentar se aproximar e colocar a sua boca na sua perna, {Fri00} acorda e pergunta o que você está fazendo.')
+                    input(f'\nVOCÊ ESTÁ TENTANDO ME COMER?! - {Fri00} grita desesperadamente')
                     while True:
                         AC01=False # Brincadeirinha
                         AC02=False # Putasso
@@ -95,16 +113,16 @@ while True:
                             AC02=True
                             break
         
-        elif AB02==True:
-            input(f'Com muito sono, {f00} acorda e tenta lembrar do que houve na noite passada.')
+        elif Sep01_Wakeup==True:
+            input(f'Com muito sono, {Fri00} acorda e tenta lembrar do que houve na noite passada.')
             input(' ')
         
-        elif AB03==True: #  Abandonado
+        elif Sep02_LeftBehind==True: #  Abandonado
             input('\nComo um belo amigo que você é, você o abandona e procura por uma saída dessa caverna.')
         
         break
     
-    if AB03==False:
+    if Sep02_LeftBehind==False:
         while True:
             BA00=False #  Mentira
             BA01=False #  Pergunta "brincaderinha"
@@ -124,7 +142,7 @@ while True:
                 except ValueError:
                     input('\nEscreva um número')
                     
-    elif AB03==True and A00==True:
+    elif Sep02_LeftBehind==True and Dec00==True:
         input('EI!')
         time.sleep(2)
         input('Você ')
