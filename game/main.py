@@ -1,7 +1,7 @@
 
 from fundef import final, separacao,separacao
-from history import History
-from structure import getPlayerName, starting, tuto
+from history import history
+from structure import starting, tuto
 
 sep=separacao()
 
@@ -9,10 +9,9 @@ sep=separacao()
 ##  Críticas construtivas são aceitas.
 
 print(sep)
-input('Essa versão do jogo está imcompleta. Se você gostar eu agradeço.')
+print('Essa versão do jogo está imcompleta. Se você gostar eu agradeço.')
 
 starting()
 tuto()
-player_name=getPlayerName()
-History.history()
+history()
 final()

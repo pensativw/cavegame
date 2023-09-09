@@ -38,10 +38,16 @@ def getName(texto: str, erro: str) -> str:
         else:
             print(erro)
 
+
+
 def getPlayerName() -> str:
     name = getName(texto=f'{sep}\nEscreva seu nome -> ',
     erro=f'O nome deve conter apenas letras e ter mais de 3 caracteres')
     return name
+
+
+
+
 
 def tuto():
     print(f'{sep}\nAntes de começar, deseja ver as instruções para saber o que esperar?\n')
@@ -62,7 +68,7 @@ def tuto():
             print(f'{sep}')
             mensagem = [
                 'O jogo é baseado em escolhas, e suas decisões afetarão o rumo da história.',
-                'Tem algumas escolhas que você tem que chutar qual é o número, pode ser uma referência à algo, por exemplo.'
+                'Tem algumas escolhas que você tem que chutar qual é o número, pode ser uma referência à algo, por exemplo.',
                 'Há caminhos secretos neste jogo, tipo a primeira escolha que você vai fazer.',
                 'As animações de texto são usadas para representar um personagem falando.',
                 'Texto estático é narrativa.',

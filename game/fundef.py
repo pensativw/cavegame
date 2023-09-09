@@ -1,4 +1,4 @@
-__ver__='0.0.30a'
+__ver__='0.0.31a'
 import time,sys
 def DJpt(DJphrase:str,DJtempo:int):
     for i in DJphrase:
@@ -7,7 +7,7 @@ def DJpt(DJphrase:str,DJtempo:int):
         time.sleep(1/DJtempo)
 
 def separacao():
-    return'~~~~~~'*5
+    return'~'*10
 
 sep=separacao()
 
@@ -27,6 +27,6 @@ def final():
     input(f'\nESSA FOI A ALPHA!\n')
     
     creditsFi()
-def exibir_mensagem(mensagem:str):
+def exibir_mensagem(mensagem):
     for mensagem in mensagem:
         input(mensagem)
