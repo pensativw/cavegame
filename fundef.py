@@ -1,32 +1,32 @@
+__ver__='0.0.30a'
 import time,sys
-
-def DJpt(DJphrase,DJtempo):
+def DJpt(DJphrase:str,DJtempo:int):
     for i in DJphrase:
         sys.stdout.write(i)
         sys.stdout.flush()
         time.sleep(1/DJtempo)
 
+def separacao():
+    return'~~~~~~'*5
 
-def TUTO():
-    INS=input('\nAntes de tudo, deseja ver instruções para saber o que vai fazer? -> ').lower()
-    INS_Open=False
-    while True:
-        if INS in ['sim','s','y','yes']:
-            input('\nO jogo é de escolhas, se você fez algo, no futuro tu pode morrer.')
-            input('\nHá caminhos secretos nesse jogo, tipo a primeira escolha.')
-            input('\nPorém, não vão ser todas as escolhas que irão ter opções secretas.')
-            input('\nEspero que se diverta!')
-            INS_Open=True
-        elif INS in ['n','não','nao','no']:
-            INS_Open=True
-            break
-        elif INS in ['']:
-            INS=input('\nEnter mais uma vez para não ir pro tutorial. -> ')
-            if INS == '':INS_Open=True
-            break
-        else:
-            INS=input('Sim ou não -> ')
-            continue
-            
-        if INS_Open==True:break
+sep=separacao()
+
+def creditsIn():
+    input(f'{sep}\nVersão {__ver__}')
+    input('\nProgramado por:\npensativw')
+    input('\nRedes sociais:\nPraticamente tudo é pensativw')
+    input(f'\nAgradecimentos especiais:\n3DJhey\nGabriel Morph')
     
+def creditsFi():
+    input(f'{sep}\nVersão {__ver__}')
+    input('\nProgramado por:\npensativw')
+    input('\nRedes sociais:\nPraticamente tudo é pensativw')
+    input(f'\nAgradecimentos especiais:\n3DJhey\nGabriel Morph\n{sep}\n')
+
+def final():
+    input(f'\nESSA FOI A ALPHA!\n')
+    
+    creditsFi()
+def exibir_mensagem(mensagem:str):
+    for mensagem in mensagem:
+        input(mensagem)

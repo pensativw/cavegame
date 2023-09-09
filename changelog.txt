@@ -1,20 +1,38 @@
+v0.0.30a
+    Adições:
+        Menu e créditos
+        Arquivos criados: 'funclass.py', 'history.py' e 'structure.py'
+        Linhas de código melhoradas
+
+    Alterações:
+        Mudanças de diálogos
+        Melhoria de timing das conversas
+        Melhoria na estrutura do código
+        Melhor formatação de texto
+        Confirmação ao adicionar nome
+        'start.py' renomeado para 'main.py'
+    
+    Removido:
+        Escolher o nome 'ver' não aparece mais a versão 
+        Maioria dos diálogos para aprimorá-los
+
 v0.0.2.6
-Adições:
-    Ao escrever 'ver' quando digitar no nome aparece a versão
-    Nome
-    Tutorial
-    Animações de texto (em alguns pontos)
-    Mais algumas linhas de diálogo
+    Adições:
+        Ao escrever 'ver' quando digitar no nome aparece a versão
+        Nome
+        Tutorial
+        Animações de texto (em alguns pontos)
+        Mais algumas linhas de diálogo
 
-Alterações:
-    Removido temporizador do início
-    def.py renomeado para fundef.py
-    Melhoria no timing
+    Alterações:
+        Removido temporizador do início
+        def.py renomeado para fundef.py
+        Melhoria no timing
 
-Bugs:
-    Alguns. Mas detectei um ao selecionar algumas opções.
+    Bugs:
+        Alguns. Mas detectei um ao selecionar algumas opções.
 
-Em porgresso:
-    História
-    Melhoria na estrutura
-    Automação
+    Em progresso:
+        História
+        Melhoria na estrutura
+        Automação
