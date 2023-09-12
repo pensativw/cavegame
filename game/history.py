@@ -1,56 +1,108 @@
 
 from fundef import __ver__
-
+from fundef import *
+from structure import *
 import time
-from fundef import DJpt,separacao
-from structure import getPlayerName
 sep=separacao()
 
 
+
 def history():
-    player_name=getPlayerName()
-    input(f'Você acorda em um lugar desconhecido')
-    input('Tu mal consegue enxergar...')
-    input('O que você faz?')
-    while True:
-        while True: #primeira parte
-            try:
-                ultimateDecision00=int(input(f'\n1. Gritar por ajuda\n2. Se levantar\n\n-> '))
-                if ultimateDecision00==1:
-                    print(f'{sep}')
-                    DJpt(DJphrase='SOCORRO!!!!!!!!',DJtempo=20)
-                    time.sleep(1)
-                    DJpt(DJphrase=' ALGUÉM AÍ!!!!!!!!??????!!',DJtempo=30)
-                    print('\n')
-                    DJpt(DJphrase='...',DJtempo=1)
-                    print('Nada acontece.',end='',flush=True)
-                    time.sleep(1)
-                    print(f' A não ser',flush=True,end='')
-                    DJpt(DJphrase='...',DJtempo=20) 
-                    time.sleep(1)
-                    input('pedras caem em sua direção!')
-                    input(f'Você consegue fugir do buraco que você estava e dá graças a Deus que saiu a tempo.')
-                    silentDecision_Grito=True
-                    morte00=False
-                    break
-                elif ultimateDecision00==2:
-                    input(f'{sep}\nAo se levantar, tu percebe que está num buraco.')
-                    input('Com certa dificuldade por causa do sedentarismo, você sai dele.')
-                    input(f'E dá graças a Deus que ao sair você não foi esmagado por rochas que foram empurradas por alguém...')
-                    silentDecision_Grito=False
-                    morte00=False
-                    break
-                else:
-                    input(f'{sep}\nVocê morreu por ter feito nada, por pedras que desabaram.\n{sep}')
-                    morte00=True
-                    break
-            except ValueError:
-                input(f'{sep}\nEscreva um número.')
-                continue
-        if morte00==False:
-            input(f'\nContinua...\n{sep}')
+    # player_name=getPlayerName()
+    mensagem=['Você acorda em um lugar desconhecido\n',
+              'Tu mal consegue enxergar...\n',
+              'O que você faz?\n']
+    confirmmensagem(mensagem,True)
+    while True:#primeira parte
+        Death00=False
+        gritarDecision=False
+        levantarDecision=False
+        while True:
+            pergunta('Gritar por ajuda','Se levantar',None)
+            ultimateDecision00=resposta()
+            if ultimateDecision00=='1':
+                gritarDecision=True
+                sepclear(1/4,0)
+                break
+
+            elif ultimateDecision00=='2':
+                levantarDecision=True
+                sepclear(1/4,0)
+                break
+
+            elif ultimateDecision00 in ['preguiça','preguica']:
+                Death00=True
+                sepclear(1/4,0)
+                break
+            else:
+                sepclear(1/4,1)
+                exibirmensagem(mensagem,True,0,False)
+            
+        if Death00==True:
+            mensagem=['Você morreu.', 'Motivo da morte: ter estado com preguiça de se levantar.']
+            confirmmensagem(mensagem,False)
             break
-        else: break
+        elif gritarDecision==True:
+                print(sep)
+                DJpt('SOCORRO!!!!!!!!',20,1)
+                DJpt(' ALGUÉM AÍ!!!!!!!!??????!!',30,1)
+                linebreak(1)
+                DJpt('...',1,0)
+                mensagem=['Nada acontece.','A não ser...']
+                exibirmensagem(mensagem,False,1,True)
+                mensagem=['Pedras caem em sua direção!\n','Você consegue sair do buraco que você estava e dá graças a Deus que saiu a tempo.']
+                confirmmensagem(mensagem,False)
+                silentDecision_Grito=True
+                break
+    
+        elif levantarDecision==True:
+            print(sep)
+            mensagem=['Você se levanta e se dá conta que está num buraco.\n',
+                      'Tu consegue sair e vê pedras caindo em direção do buraco...\n',
+                      'Era uma pessoa que as tinha jogado.']
+            confirmmensagem(mensagem,False)
+            break
+          
+        #     ultimateDecision00=input(f'1. Gritar por ajuda\n2. Se levantar\n\n-> ')
+        #     sepclear(0)
+        #     try:
+        #         if ultimateDecision00==1:
+        #             clearsep(0)
+        #             DJpt(DJphrase='SOCORRO!!!!!!!!',DJtempo=20)
+        #             time.sleep(1)
+        #             DJpt(DJphrase=' ALGUÉM AÍ!!!!!!!!??????!!',DJtempo=30)
+        #             print('\n')
+        #             DJpt(DJphrase='...',DJtempo=1)
+        #             print('Nada acontece.',end='',flush=True)
+        #             time.sleep(1)
+        #             print(f' A não ser',flush=True,end='')
+        #             DJpt(DJphrase='...',DJtempo=20) 
+        #             time.sleep(1)
+        #             mensagem=['pedras caem em sua direção!','Você consegue fugir do buraco que você estava e dá graças a Deus que saiu a tempo.']
+        #             confirmmensagem(mensagem)
+        #             silentDecision_Grito=True
+        #             morte00=False
+        #             break
+        #         elif ultimateDecision00==2:
+        #             clearsep(0)
+        #             mensagem=['Ao se levantar, tu percebe que está num buraco.',
+        #                       'Com certa dificuldade por causa do sedentarismo, você sai dele.',
+        #                       'E dá graças a Deus que ao sair você não foi esmagado por rochas que foram empurradas por alguém...']
+        #             confirmmensagem(mensagem)
+        #             silentDecision_Grito=False
+        #             morte00=False
+        #             print(sepbreak)
+        #             break
+        #         else:
+        #             input(f'{sep}\nVocê morreu por ter feito nada, por pedras que desabaram.\n{sep}')
+        #             morte00=True
+        #             break
+        #     except ValueError:
+        #         continue
+        # if morte00==False:
+        #     input(f'\nContinua...\n{sep}')
+        #     break
+        # else: break
 
             # if morte00==False:
             #     input(f'Ao caminhar um pouco, você vê um corpo estirado no chão.\n\nContinua...\n{sep}')
@@ -163,4 +215,3 @@ def history():
 #         input('\nDepois de algum tempo você se depara com um pessoa, você não o conhece ele não parece ser agressivo.')
         
 #     break
-

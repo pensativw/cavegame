@@ -1,4 +1,22 @@
-v0.0.31a    
+v0.1.0
+Alterações notáveis:
+    Menu adicionado
+    Removida a maior parte dos diálogos para focar em outros lugares
+    Sem histórico
+    Não precisa mais clicar o Enter para pular as partes
+    Linhas corrigidas
+    Instruções mudado pro menu e removido o confirm
+    Agradecimentos adicionado ao menu
+    Função 'separacao' vale 20
+    Reformulação nos créditos
+    'Nome' removido temporariamente
+    
+Alterações no código:
+    Melhoria no timing
+    Melhoria na linha de código
+    Várias funções adicionadas
+
+v0.0.31a
 Alterações notáveis:
     Adicionado start.bat
     Arquivos movidos pra pasta 'game'

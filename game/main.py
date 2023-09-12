@@ -1,17 +1,11 @@
-
-from fundef import final, separacao,separacao
-from history import history
-from structure import starting, tuto
-
-sep=separacao()
-
 ##  Estou aprendendo a usar o Python criando esse jogo em linha de comando.
 ##  Críticas construtivas são aceitas.
 
-print(sep)
-print('Essa versão do jogo está imcompleta. Se você gostar eu agradeço.')
+from structure import mainmenu,final
+from history import history
+from fundef import clear
 
-starting()
-tuto()
+clear(0)
+mainmenu()
 history()
 final()
