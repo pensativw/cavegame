@@ -1,4 +1,5 @@
-
-*.pyc
-game/tempCodeRunnerFile.py
-game/tst.py
+/game.old
+/game/__pycache__
+/tst/
+/.vscode/
+/output/

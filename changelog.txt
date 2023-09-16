@@ -1,3 +1,20 @@
+v0.1.5
+Alterações notáveis:
+    Versão adicionado ao Créditos do menu
+    Falas alteradas
+    'sep' passa a valer 40
+    Adicionado linhas de diálogos
+    Adicionado '~ diz {personagem}'
+    Mudança de nome para The Lost Cave
+
+Alterações no código:
+    Função 'confirmmensagem' aprimorada
+    Unificação de várias funções
+    Melhoria nas funções
+    Reestruturação dos arquivos
+    Funções aprimoradas
+
+
 v0.1.0
 Alterações notáveis:
     Menu adicionado
